@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Prime Essence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Poppins;
+background:#0a0f1f;
+color:white;
+}
+
+/* MENU */
+
+nav{
+background:#000;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav a{
+color:white;
+margin:20px;
+text-decoration:none;
+font-size:16px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#1e3a8a;
+}
+
+/* PORTADA */
+
+header{
+background:url("portada2.jpg") center/cover;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+header h1{
+font-family:Playfair Display;
+font-size:70px;
+margin:0;
+letter-spacing:3px;
+color: black;
+/* Borde blanco para resaltar sobre el fondo */
+-webkit-text-stroke: 1.5px white;
+text-shadow: 0 0 20px rgba(255,255,255,0.4), 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+header p{
+font-size:22px;
+color: black;
+-webkit-text-stroke: 0.5px white;
+text-shadow: 1px 1px 6px rgba(0,0,0,0.9);
+}
+
+/* SECCIONES */
+
+section{
+padding:80px 10%;
+}
+
+h2{
+font-family:Playfair Display;
+color:#1e3a8a;
+margin-bottom:30px;
+}
+
+/* PRODUCTOS */
+
+.productos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111;
+border-radius:10px;
+overflow:hidden;
+text-align:center;
+transition:0.3s;
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card h3{
+margin:15px 0;
+}
+
+/* TABLA */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+background:white;
+color:black;
+}
+
+th, td{
+padding:12px;
+border:1px solid #ccc;
+text-align:center;
+}
+
+th{
+background:#1e3a8a;
+color:white;
+}
+
+/* VIDEO */
+
+.video{
+text-align:center;
+}
+
+/* Contenedor responsivo 16:9 */
+.video-wrapper {
+position: relative;
+width: 80%;
+margin: 0 auto;
+padding-top: 45%; /* 80% * 9/16 = 45% */
+}
+
+.video-wrapper iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: none;
+}
+
+/* CONTACTO */
+
+.contacto{
+background:#000;
+text-align:center;
+padding:60px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+color:#aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<a href="#inicio">Inicio</a>
+<a href="#empresa">Empresa</a>
+<a href="#productos">Productos</a>
+<a href="#catalogo">Catálogo</a>
+<a href="#video">Video</a>
+<a href="#contacto">Contacto</a>
+
+</nav>
+
+<header id="inicio">
+
+<h1>Prime Essence</h1>
+<p>Perfumes de diseñador y fragancias exclusivas</p>
+
+</header>
+
+<section id="empresa">
+
+<h2>Sobre Prime Essence</h2>
+
+<p>
+Prime Essence es una marca dedicada a la venta de perfumes de diseñador y fragancias
+árabes exclusivas. Nos enfocamos en ofrecer aromas elegantes, duraderos y de alta
+calidad para personas que buscan destacar con su esencia.
+</p>
+
+<p>
+Nuestro catálogo incluye perfumes masculinos, femeninos y unisex de marcas
+reconocidas dentro de la perfumería internacional.
+</p>
+
+</section>
+
+<section id="productos">
+
+<h2>Nuestros Productos</h2>
+
+<div class="productos">
+
+<div class="card">
+<img src="arabe.jpg.jpeg">
+<h3>Perfumes Árabes</h3>
+</div>
+
+<div class="card">
+<img src="masculinas.jpg.jpeg">
+<h3>Fragancias Masculinas</h3>
+</div>
+
+<div class="card">
+<img src="feme.jpg.jpeg">
+<h3>Fragancias Femeninas</h3>
+</div>
+
+<div class="card">
+<img src="unisex.jpg.jpeg">
+<h3>Perfumes Unisex</h3>
+</div>
+
+<div class="card">
+<img src="delujo.jpg.jpeg">
+<h3>Perfumes de lujo</h3>
+</div>
+
+<div class="card">
+<img src="impor.jpg.jpeg">
+<h3>Perfumes Importados</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="catalogo">
+
+<h2>Catálogo de perfumes</h2>
+
+<table>
+
+<tr>
+<th>Perfume</th>
+<th>Marca</th>
+<th>Tipo</th>
+<th>Duración</th>
+<th>Precio</th>
+</tr>
+
+<tr>
+<td>Suavage</td>
+<td>Dior</td>
+<td>Hombre</td>
+<td>10-12 horas</td>
+<td>$4,500</td>
+</tr>
+
+<tr>
+<td>Chanel No. 5</td>
+<td>Chanel</td>
+<td>Mujer</td>
+<td>10 horas</td>
+<td>3,000</td>
+</tr>
+
+<tr>
+<td>Creed Aventus</td>
+<td>Creed</td>
+<td>Hombre</td>
+<td>8 horas</td>
+<td>$900</td>
+</tr>
+
+<tr>
+<td>CK One</td>
+<td>Calvin Klein</td>
+<td>Unisex</td>
+<td>9 horas</td>
+<td>$1,000</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="video" class="video">
+
+<h2>Conoce nuestras fragancias</h2>
+
+<!-- URL de embed corregida: usar /embed/VIDEO_ID en lugar del link de watch -->
+<div class="video-wrapper">
+  <iframe 
+    src="https://www.youtube.com/embed/Tdal-6WNWVo" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+</section>
+
+<section id="contacto" class="contacto">
+
+<h2>Contacto</h2>
+
+<p>Email: primeessence@gmail.com</p>
+<p>Instagram: @prime_essence</p>
+<p>Teléfono: +52 353 130 0909</p>
+<p>Anai Barajas Medina</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 Prime Essence</p>
+
+</footer>
+
+</body>
+</html>
