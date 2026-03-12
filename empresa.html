@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empresa — Prime Essence</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.pillar {
+  background: var(--bg-card);
+  border: 1px solid rgba(0,195,255,0.1);
+  border-radius: 8px;
+  padding: 28px 22px;
+  transition: border-color 0.3s;
+}
+.pillar:hover { border-color: rgba(0,195,255,0.35); }
+
+.pillar-icon { font-size: 26px; margin-bottom: 12px; display: block; }
+
+.pillar h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--neon-blue);
+  margin-bottom: 8px;
+}
+
+.pillar p { font-size: 13px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 50px 8%;
+}
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+.about-text p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+.about-text strong { color: var(--neon-blue); font-weight: 600; }
+
+.about-img {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0,195,255,0.15);
+  height: 340px;
+}
+.about-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.65); }
+
+.tl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.tl-item {
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid rgba(0,195,255,0.1);
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+.tl-item:hover { border-color: rgba(0,195,255,0.3); }
+
+.tl-year {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  color: var(--neon-gold);
+  margin-bottom: 6px;
+}
+.tl-desc { font-size: 13px; color: var(--muted); line-height: 1.6; font-weight: 300; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">PRIME ESSENCE</a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="empresa.html" class="active">Empresa</a>
+    <a href="productos.html">Productos</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="video.html">Video</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+
+<div class="page-header fade-up">
+  <span class="label">Sobre Nosotros</span>
+  <h1>Nuestra <span>Historia</span></h1>
+  <p>Prime Essence es una marca mexicana dedicada a ofrecer fragancias auténticas de diseñador y aromas árabes exclusivos.</p>
+</div>
+
+<div class="glow-line"></div>
+
+<div class="about-grid">
+  <div class="about-text fade-up">
+    <h2 style="margin-bottom:8px;">Quiénes <span class="accent">Somos</span></h2>
+    <div class="divider"></div>
+    <p><strong>Prime Essence</strong> nació de la pasión por el arte de la perfumería internacional. Nuestra misión es acercar las fragancias más exclusivas del mundo a quienes valoran la distinción personal.</p>
+    <p>Ofrecemos perfumes auténticos elaborados con los ingredientes más raros: aceites de oud de Camboya, resinas de incienso de Omán, rosas de Taif y ambras de profundidad insuperable.</p>
+    <p>Nos distingue la <strong>autenticidad garantizada</strong>, asesoramiento personalizado y una curaduría cuidadosa de cada fragancia.</p>
+  </div>
+  <div class="about-img fade-up d2">
+    <img src="portada2.jpg.jpeg" alt="Prime Essence">
+  </div>
+</div>
+
+<div class="glow-line"></div>
+
+
+<div class="glow-line"></div>
+
+<footer>
+  <p>© 2026 Prime Essence — Todos los derechos reservados</p>
+  <span class="footer-brand">PRIME ESSENCE</span>
+</footer>
+</body>
+</html>

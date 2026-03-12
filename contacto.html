@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto — Prime Essence</title>
+    <style>
+        /* Variables y Base */
+        :root {
+            --blue: #00c3ff;
+            --bg: #0a0a0a;
+            --card: #161616;
+            --text: #ffffff;
+            --gray: #888;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navegación */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0,0,0,0.8);
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--blue);
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--blue);
+        }
+
+        /* Contenedor Principal */
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        
+        header { text-align: center; padding: 40px 0; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { color: var(--gray); margin-bottom: 40px; }
+
+        /* Grid de contacto */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+        }
+
+        @media (max-width: 768px) { 
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Ocultar links en móvil para simplificar */
+        }
+
+        /* Formulario */
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 11px; text-transform: uppercase; color: var(--gray); margin-bottom: 5px; letter-spacing: 1px; }
+        
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 12px;
+            background: var(--card);
+            border: 1px solid #333;
+            color: white;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus { border-color: var(--blue); outline: none; }
+
+        .btn-submit {
+            background: var(--blue);
+            color: #000;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+
+        .btn-submit:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        /* Información de contacto */
+        .info-item { margin-bottom: 25px; }
+        .info-item label { color: var(--blue); font-size: 11px; display: block; text-transform: uppercase; margin-bottom: 4px; }
+        .info-item a, .info-item span { color: white; text-decoration: none; font-size: 16px; }
+
+        /* Horarios */
+        .hours-flex {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .hour-box { background: var(--card); padding: 20px; border-radius: 8px; flex: 1; min-width: 200px; border: 1px solid #222; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a class="nav-brand" href="index.html">PRIME ESSENCE</a>
+    <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="empresa.html">Empresa</a>
+        <a href="productos.html">Productos</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="contacto.html" class="active">Contacto</a>
+    </div>
+</nav>
+
+<main class="container">
+    <header>
+        <h1>Contáctanos</h1>
+        <p class="subtitle">¿Tienes dudas? Estamos aquí para asesorarte.</p>
+    </header>
+
+    <div class="contact-grid">
+        
+        <div class="contact-info">
+            <div class="info-item">
+                <label>📍 Ubicación</label>
+                <span>Zamora de Hidalgo, Michoacán</span>
+            </div>
+            <div class="info-item">
+                <label>📱 WhatsApp</label>
+                <a href="https://wa.me/523531300909">+52 353 130 0909</a>
+            </div>
+            <div class="info-item">
+                <label>📧 Email</label>
+                <a href="mailto:primeessence@gmail.com">primeessence@gmail.com</a>
+            </div>
+            <div class="info-item">
+                <label>👤 Responsable</label>
+                <span>Anai Barajas Medina</span>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <div class="form-group">
+                <label>Nombre Completo</label>
+                <input type="text" class="form-input" placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+                <label>Asunto</label>
+                <select class="form-select">
+                    <option>Asesoría personalizada</option>
+                    <option>Hacer un pedido</option>
+                    <option>Consultar catálogo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Mensaje</label>
+                <textarea class="form-textarea" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+            </div>
+            <button class="btn-submit" onclick="alert('¡Gracias! Te contactaremos pronto.')">Enviar Mensaje</button>
+        </div>
+    </div>
+
+    <section style="margin-top: 60px;">
+        <h2 style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px;">Horarios de Atención</h2>
+        <div class="hours-flex">
+            <div class="hour-box">
+                <label style="color: var(--blue); font-size: 11px;">LUNES A VIERNES</label>
+                <p style="margin: 5px 0 0;">10:00 AM – 8:00 PM</p>
+            </div>
+            <div class="hour-box">
+                <label style="color: var(--blue); font-size: 11px;">SÁBADOS</label>
+                <p style="margin: 5px 0 0;">10:00 AM – 6:00 PM</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer style="text-align: center; padding: 40px; color: var(--gray); font-size: 12px; border-top: 1px solid #222; margin-top: 40px;">
+    <p>© 2026 PRIME ESSENCE — Elegancia en cada aroma</p>
+</footer>
+
+</body>
+</html>

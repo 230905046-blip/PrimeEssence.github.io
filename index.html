@@ -2,337 +2,248 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Prime Essence</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Essence — Fragancias Exclusivas</title>
+<link rel="stylesheet" href="style.css">
 <style>
-
-html{
-scroll-behavior:smooth;
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-body{
-margin:0;
-font-family:Poppins;
-background:#0a0f1f;
-color:white;
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("portada2.jpg.jpeg") center/cover no-repeat;
+  filter: brightness(0.4);
+  z-index: 0;
 }
 
-/* MENU */
-
-nav{
-background:#000;
-padding:15px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:100;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5,8,16,0.9) 0%, transparent 60%);
+  z-index: 1;
 }
 
-nav a{
-color:white;
-margin:20px;
-text-decoration:none;
-font-size:16px;
-transition:0.3s;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 0 20px;
 }
 
-nav a:hover{
-color:#1e3a8a;
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--neon-blue);
+  margin-bottom: 14px;
 }
 
-/* PORTADA */
-
-header{
-background:url("portada2.jpg") center/cover;
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(50px, 9vw, 100px);
+  font-weight: 400;
+  letter-spacing: 6px;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(0,195,255,0.2);
+  line-height: 1;
+  margin-bottom: 12px;
 }
 
-header h1{
-font-family:Playfair Display;
-font-size:70px;
-margin:0;
-letter-spacing:3px;
-color: black;
-/* Borde blanco para resaltar sobre el fondo */
--webkit-text-stroke: 1.5px white;
-text-shadow: 0 0 20px rgba(255,255,255,0.4), 2px 2px 8px rgba(0,0,0,0.8);
+.hero-sub {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
 }
 
-header p{
-font-size:22px;
-color: black;
--webkit-text-stroke: 0.5px white;
-text-shadow: 1px 1px 6px rgba(0,0,0,0.9);
+.hero-logo {
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
 }
 
-/* SECCIONES */
-
-section{
-padding:80px 10%;
+.hero-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid rgba(0,195,255,0.4);
+  background: rgba(5,8,16,0.7);
+  padding: 8px;
+  box-shadow: 0 0 20px rgba(0,195,255,0.2);
 }
 
-h2{
-font-family:Playfair Display;
-color:#1e3a8a;
-margin-bottom:30px;
+.hero-btn {
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
 }
 
-/* PRODUCTOS */
-
-.productos{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
+.btn {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--neon-blue);
+  border: 1px solid rgba(0,195,255,0.5);
+  padding: 12px 32px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  background: rgba(0,195,255,0.05);
 }
 
-.card{
-background:#111;
-border-radius:10px;
-overflow:hidden;
-text-align:center;
-transition:0.3s;
+.btn:hover {
+  background: var(--neon-blue);
+  color: var(--bg);
+  box-shadow: 0 0 20px rgba(0,195,255,0.3);
 }
 
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(0,195,255,0.1);
+  border-bottom: 1px solid rgba(0,195,255,0.1);
 }
 
-.card:hover{
-transform:scale(1.05);
+.stat {
+  padding: 30px 10%;
+  text-align: center;
+  border-right: 1px solid rgba(0,195,255,0.08);
+}
+.stat:last-child { border-right: none; }
+
+.stat-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  color: var(--neon-blue);
+  text-shadow: 0 0 14px var(--neon-blue);
+  display: block;
+  margin-bottom: 6px;
 }
 
-.card h3{
-margin:15px 0;
+.stat-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  font-weight: 300;
 }
 
-/* TABLA */
-
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-background:white;
-color:black;
+@media (max-width: 560px) {
+  .stats { grid-template-columns: 1fr; }
+  .stat { border-right: none; border-bottom: 1px solid rgba(0,195,255,0.08); }
 }
-
-th, td{
-padding:12px;
-border:1px solid #ccc;
-text-align:center;
-}
-
-th{
-background:#1e3a8a;
-color:white;
-}
-
-/* VIDEO */
-
-.video{
-text-align:center;
-}
-
-/* Contenedor responsivo 16:9 */
-.video-wrapper {
-position: relative;
-width: 80%;
-margin: 0 auto;
-padding-top: 45%; /* 80% * 9/16 = 45% */
-}
-
-.video-wrapper iframe {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-border: none;
-}
-
-/* CONTACTO */
-
-.contacto{
-background:#000;
-text-align:center;
-padding:60px;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#000;
-color:#aaa;
-}
-
 </style>
 </head>
-
 <body>
 
 <nav>
-
-<a href="#inicio">Inicio</a>
-<a href="#empresa">Empresa</a>
-<a href="#productos">Productos</a>
-<a href="#catalogo">Catálogo</a>
-<a href="#video">Video</a>
-<a href="#contacto">Contacto</a>
-
+  <a class="nav-brand" href="index.html">PRIME ESSENCE</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Inicio</a>
+    <a href="empresa.html">Empresa</a>
+    <a href="productos.html">Productos</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="video.html">Videos</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
 </nav>
 
-<header id="inicio">
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
 
-<h1>Prime Essence</h1>
-<p>Perfumes de diseñador y fragancias exclusivas</p>
+  <div class="hero-content fade-up">
+    <p class="hero-eyebrow">Colección Exclusiva 2026</p>
+    <h1 class="hero-title">Prime Essence</h1>
+    <p class="hero-sub">Perfumes de Diseñador &nbsp;·&nbsp; Fragancias Árabes Exclusivas</p>
+  </div>
 
+  <div class="hero-logo fade-up d2">
+    <img src="logo.jpeg" alt="Prime Essence Logo">
+  </div>
+
+  <div class="hero-btn fade-up d3">
+    <a href="productos.html" class="btn">Explorar Colección</a>
+  </div>
 </header>
 
-<section id="empresa">
+<div class="glow-line"></div>
 
-<h2>Sobre Prime Essence</h2>
+<div class="stats">
+  <div class="stat">
+    <span class="stat-num">200+</span>
+    <span class="stat-label">Fragancias disponibles</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">15+</span>
+    <span class="stat-label">Marcas internacionales</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">100%</span>
+    <span class="stat-label">Autenticidad garantizada</span>
+  </div>
+</div>
 
-<p>
-Prime Essence es una marca dedicada a la venta de perfumes de diseñador y fragancias
-árabes exclusivas. Nos enfocamos en ofrecer aromas elegantes, duraderos y de alta
-calidad para personas que buscan destacar con su esencia.
-</p>
-
-<p>
-Nuestro catálogo incluye perfumes masculinos, femeninos y unisex de marcas
-reconocidas dentro de la perfumería internacional.
-</p>
-
+<section>
+  <h2>Colecciones <span class="accent">Destacadas</span></h2>
+  <div class="divider"></div>
+  <div class="card-grid">
+    <div class="card fade-up d1">
+      <img src="arabe.jpg.jpeg" alt="Perfumes Árabes">
+      <div class="card-body">
+        <h3>Perfumes Árabes</h3>
+        <p>Oud, ambra y especias exóticas con una longevidad extraordinaria de más de 12 horas.</p>
+        <span class="tag">Oriental</span>
+      </div>
+    </div>
+    <div class="card fade-up d2">
+      <img src="masculinas.jpg.jpeg" alt="Fragancias Masculinas">
+      <div class="card-body">
+        <h3>Fragancias Masculinas</h3>
+        <p>Dior, Creed, Tom Ford y más. Desde frescos acuáticos hasta amaderados intensos.</p>
+        <span class="tag">Masculino</span>
+      </div>
+    </div>
+    <div class="card fade-up d3">
+      <img src="feme.jpg.jpeg" alt="Fragancias Femeninas">
+      <div class="card-body">
+        <h3>Fragancias Femeninas</h3>
+        <p>Florales, afrutadas y amaderadas de Chanel, Lancôme, Valentino y más.</p>
+        <span class="tag">Femenino</span>
+      </div>
+    </div>
+    <div class="card fade-up d4">
+      <img src="delujo.jpg.jpeg" alt="Perfumes de Lujo">
+      <div class="card-body">
+        <h3>Perfumes de Lujo</h3>
+        <p>Ediciones limitadas y colecciones privadas para los paladares más exigentes.</p>
+        <span class="tag">Premium</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="productos">
-
-<h2>Nuestros Productos</h2>
-
-<div class="productos">
-
-<div class="card">
-<img src="arabe.jpg.jpeg">
-<h3>Perfumes Árabes</h3>
-</div>
-
-<div class="card">
-<img src="masculinas.jpg.jpeg">
-<h3>Fragancias Masculinas</h3>
-</div>
-
-<div class="card">
-<img src="feme.jpg.jpeg">
-<h3>Fragancias Femeninas</h3>
-</div>
-
-<div class="card">
-<img src="unisex.jpg.jpeg">
-<h3>Perfumes Unisex</h3>
-</div>
-
-<div class="card">
-<img src="delujo.jpg.jpeg">
-<h3>Perfumes de lujo</h3>
-</div>
-
-<div class="card">
-<img src="impor.jpg.jpeg">
-<h3>Perfumes Importados</h3>
-</div>
-
-</div>
-
-</section>
-
-<section id="catalogo">
-
-<h2>Catálogo de perfumes</h2>
-
-<table>
-
-<tr>
-<th>Perfume</th>
-<th>Marca</th>
-<th>Tipo</th>
-<th>Duración</th>
-<th>Precio</th>
-</tr>
-
-<tr>
-<td>Suavage</td>
-<td>Dior</td>
-<td>Hombre</td>
-<td>10-12 horas</td>
-<td>$4,500</td>
-</tr>
-
-<tr>
-<td>Chanel No. 5</td>
-<td>Chanel</td>
-<td>Mujer</td>
-<td>10 horas</td>
-<td>3,000</td>
-</tr>
-
-<tr>
-<td>Creed Aventus</td>
-<td>Creed</td>
-<td>Hombre</td>
-<td>8 horas</td>
-<td>$900</td>
-</tr>
-
-<tr>
-<td>CK One</td>
-<td>Calvin Klein</td>
-<td>Unisex</td>
-<td>9 horas</td>
-<td>$1,000</td>
-</tr>
-
-</table>
-
-</section>
-
-<section id="video" class="video">
-
-<h2>Conoce nuestras fragancias</h2>
-
-<!-- URL de embed corregida: usar /embed/VIDEO_ID en lugar del link de watch -->
-<div class="video-wrapper">
-  <iframe 
-    src="https://www.youtube.com/embed/Tdal-6WNWVo" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
-</div>
-
-</section>
-
-<section id="contacto" class="contacto">
-
-<h2>Contacto</h2>
-
-<p>Email: primeessence@gmail.com</p>
-<p>Instagram: @prime_essence</p>
-<p>Teléfono: +52 353 130 0909</p>
-<p>Anai Barajas Medina</p>
-
-</section>
+<div class="glow-line"></div>
 
 <footer>
-
-<p>© 2026 Prime Essence</p>
-
+  <p>© 2026 Prime Essence — Todos los derechos reservados</p>
+  <span class="footer-brand">PRIME ESSENCE</span>
 </footer>
 
 </body>

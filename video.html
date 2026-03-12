@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video — Prime Essence</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.quote-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0,195,255,0.1);
+  border-radius: 8px;
+  padding: 24px;
+  transition: border-color 0.3s;
+}
+.quote-card:hover { border-color: rgba(0,195,255,0.3); }
+
+.quote-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 14px;
+  font-weight: 300;
+}
+
+.quote-author {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--neon-blue);
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">PRIME ESSENCE</a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="empresa.html">Empresa</a>
+    <a href="productos.html">Productos</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="video.html" class="active">Video</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+
+<div class="page-header fade-up">
+  <span class="label">Experiencia Visual</span>
+  <h1>Conoce Nuestras <span>Fragancias</span></h1>
+  <p>Sumérgete en el mundo olfativo de Prime Essence a través de este video.</p>
+</div>
+
+<div class="glow-line"></div>
+
+<section>
+  <div class="video-container fade-up">
+    <iframe
+      src="https://www.youtube.com/embed/Tdal-6WNWVo"
+      title="Prime Essence Fragancias"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<div class="glow-line"></div>
+
+<section>
+  <h2>Lo que dicen nuestros <span class="accent">Clientes</span></h2>
+  <div class="divider"></div>
+  <div class="quotes-grid">
+    <div class="quote-card fade-up d1">
+      <p>El Oud Royal es increíblemente duradero. Lo uso para mis reuniones de negocios y siempre recibo elogios.</p>
+      <span class="quote-author">— Carlos M.</span>
+    </div>
+    <div class="quote-card fade-up d2">
+      <p>Encontré fragancias que no conseguía en ninguna perfumería local. Entrega rápida y empaque impecable.</p>
+      <span class="quote-author">— Sofía R.</span>
+    </div>
+    <div class="quote-card fade-up d3">
+      <p>La asesoría fue excelente. Me ayudaron a elegir el perfume perfecto para mi boda.</p>
+      <span class="quote-author">— Daniela V.</span>
+    </div>
+  </div>
+</section>
+
+<div class="glow-line"></div>
+
+<footer>
+  <p>© 2026 Prime Essence — Todos los derechos reservados</p>
+  <span class="footer-brand">PRIME ESSENCE</span>
+</footer>
+</body>
+</html>

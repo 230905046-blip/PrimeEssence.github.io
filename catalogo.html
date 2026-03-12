@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo — Prime Essence</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.search-wrap { margin-bottom: 24px; }
+.search-input {
+  background: var(--bg-card);
+  border: 1px solid rgba(0,195,255,0.2);
+  border-radius: 6px;
+  padding: 10px 16px;
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  outline: none;
+  width: 280px;
+  transition: border-color 0.3s;
+}
+.search-input::placeholder { color: var(--muted); }
+.search-input:focus { border-color: rgba(0,195,255,0.5); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">PRIME ESSENCE</a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="empresa.html">Empresa</a>
+    <a href="productos.html">Productos</a>
+    <a href="catalogo.html" class="active">Catálogo</a>
+    <a href="video.html">Video</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+
+<div class="page-header fade-up">
+  <span class="label">Lista de Fragancias</span>
+  <h1>Catálogo de <span>Perfumes</span></h1>
+  <p>Precios en pesos mexicanos (MXN). Consulta disponibilidad por WhatsApp o Instagram.</p>
+</div>
+
+<div class="glow-line"></div>
+
+<section>
+  <div class="search-wrap">
+    <input class="search-input" type="text" placeholder="🔍 Buscar fragancia..." id="searchInput">
+  </div>
+
+  <div class="table-wrap">
+    <table id="catalogTable">
+      <thead>
+        <tr>
+          <th>Fragancia</th>
+          <th>Marca</th>
+          <th>Tipo</th>
+          <th>Duración</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sauvage</strong></td>
+          <td>Dior</td>
+          <td><span class="badge badge-h">Hombre</span></td>
+          <td>10–12 h</td>
+          <td><span class="price">$4,500</span></td>
+        </tr>
+        <tr>
+          <td><strong>Chanel No. 5</strong></td>
+          <td>Chanel</td>
+          <td><span class="badge badge-m">Mujer</span></td>
+          <td>10 h</td>
+          <td><span class="price">$3,000</span></td>
+        </tr>
+        <tr>
+          <td><strong>Creed Aventus</strong></td>
+          <td>Creed</td>
+          <td><span class="badge badge-h">Hombre</span></td>
+          <td>8 h</td>
+          <td><span class="price">$900</span></td>
+        </tr>
+        <tr>
+          <td><strong>CK One</strong></td>
+          <td>Calvin Klein</td>
+          <td><span class="badge badge-u">Unisex</span></td>
+          <td>9 h</td>
+          <td><span class="price">$1,000</span></td>
+        </tr>
+        <tr>
+          <td><strong>Black Orchid</strong></td>
+          <td>Tom Ford</td>
+          <td><span class="badge badge-u">Unisex</span></td>
+          <td>12 h</td>
+          <td><span class="price">$5,200</span></td>
+        </tr>
+        <tr>
+          <td><strong>Baccarat Rouge 540</strong></td>
+          <td>Maison Francis K.</td>
+          <td><span class="badge badge-u">Unisex</span></td>
+          <td>14+ h</td>
+          <td><span class="price">$8,900</span></td>
+        </tr>
+        <tr>
+          <td><strong>Oud Royal</strong></td>
+          <td>Prime Essence</td>
+          <td><span class="badge badge-u">Unisex</span></td>
+          <td>16+ h</td>
+          <td><span class="price">$2,800</span></td>
+        </tr>
+        <tr>
+          <td><strong>La Vie Est Belle</strong></td>
+          <td>Lancôme</td>
+          <td><span class="badge badge-m">Mujer</span></td>
+          <td>10 h</td>
+          <td><span class="price">$2,400</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:16px; font-size:12px; color:var(--muted);">
+    * Precios sujetos a cambio. Consulta stock disponible. Envíos a toda la República Mexicana.
+  </p>
+</section>
+
+<div class="glow-line"></div>
+
+<footer>
+  <p>© 2026 Prime Essence — Todos los derechos reservados</p>
+  <span class="footer-brand">PRIME ESSENCE</span>
+</footer>
+
+<script>
+  document.getElementById('searchInput').addEventListener('input', function() {
+    const val = this.value.toLowerCase();
+    document.querySelectorAll('#catalogTable tbody tr').forEach(row => {
+      row.style.display = row.textContent.toLowerCase().includes(val) ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
