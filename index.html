@@ -1,339 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Prime Essence</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio – Productos Lácteo Contreras Chávez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #inicio {
+      min-height:calc(100vh - var(--nav-h));
+      background:
+        linear-gradient(135deg,rgba(192,57,43,.82) 0%,rgba(44,26,14,.75) 100%),
+        url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1400') center/cover no-repeat;
+      display:flex; align-items:center;
+      padding:6rem 5%;
+      position:relative; overflow:hidden;
+    }
+    #inicio::after {
+      content:''; position:absolute;
+      bottom:-2px; left:0; right:0; height:80px;
+      background:var(--cream);
+      clip-path:ellipse(55% 100% at 50% 100%);
+    }
+    .hero-content { max-width:680px; animation:fadeUp .9s ease both; }
+    .hero-badge {
+      display:inline-block; background:var(--red-light); color:#fff;
+      font-size:.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase;
+      padding:.35rem .85rem; border-radius:30px; margin-bottom:1.2rem;
+    }
+    .hero-content h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.4rem,6vw,4.2rem); font-weight:900;
+      color:var(--white); line-height:1.1; margin-bottom:1.2rem;
+    }
+    .hero-content h1 em { color:#f9c74f; font-style:normal; }
+    .hero-content p {
+      font-size:1.05rem; font-weight:300; color:rgba(255,255,255,.88);
+      line-height:1.75; margin-bottom:2rem; max-width:520px;
+    }
+    .hero-cta {
+      display:inline-flex; align-items:center; gap:.6rem;
+      background:var(--white); color:var(--red);
+      font-weight:700; font-size:.9rem; letter-spacing:.5px;
+      padding:.85rem 2rem; border-radius:50px;
+      box-shadow:0 4px 20px rgba(0,0,0,.2);
+      transition:background .25s,color .25s,transform .2s;
+    }
+    .hero-cta:hover { background:var(--red); color:#fff; transform:translateY(-2px); }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    .highlights {
+      background:var(--red); padding:2.5rem 5%;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:1.5rem; text-align:center;
+    }
+    .hl-item { color:#fff; }
+    .hl-icon { font-size:2rem; margin-bottom:.4rem; }
+    .hl-num  { font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; line-height:1; }
+    .hl-text { font-size:.78rem; letter-spacing:2px; text-transform:uppercase; opacity:.8; }
 
-<style>
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-margin:0;
-font-family:Poppins;
-background:#0a0f1f;
-color:white;
-}
-
-/* MENU */
-
-nav{
-background:#000;
-padding:15px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:100;
-}
-
-nav a{
-color:white;
-margin:20px;
-text-decoration:none;
-font-size:16px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#1e3a8a;
-}
-
-/* PORTADA */
-
-header{
-background:url("portada2.jpg") center/cover;
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-header h1{
-font-family:Playfair Display;
-font-size:70px;
-margin:0;
-letter-spacing:3px;
-color: black;
-/* Borde blanco para resaltar sobre el fondo */
--webkit-text-stroke: 1.5px white;
-text-shadow: 0 0 20px rgba(255,255,255,0.4), 2px 2px 8px rgba(0,0,0,0.8);
-}
-
-header p{
-font-size:22px;
-color: black;
--webkit-text-stroke: 0.5px white;
-text-shadow: 1px 1px 6px rgba(0,0,0,0.9);
-}
-
-/* SECCIONES */
-
-section{
-padding:80px 10%;
-}
-
-h2{
-font-family:Playfair Display;
-color:#1e3a8a;
-margin-bottom:30px;
-}
-
-/* PRODUCTOS */
-
-.productos{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
-}
-
-.card{
-background:#111;
-border-radius:10px;
-overflow:hidden;
-text-align:center;
-transition:0.3s;
-}
-
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.card:hover{
-transform:scale(1.05);
-}
-
-.card h3{
-margin:15px 0;
-}
-
-/* TABLA */
-
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-background:white;
-color:black;
-}
-
-th, td{
-padding:12px;
-border:1px solid #ccc;
-text-align:center;
-}
-
-th{
-background:#1e3a8a;
-color:white;
-}
-
-/* VIDEO */
-
-.video{
-text-align:center;
-}
-
-/* Contenedor responsivo 16:9 */
-.video-wrapper {
-position: relative;
-width: 80%;
-margin: 0 auto;
-padding-top: 45%; /* 80% * 9/16 = 45% */
-}
-
-.video-wrapper iframe {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-border: none;
-}
-
-/* CONTACTO */
-
-.contacto{
-background:#000;
-text-align:center;
-padding:60px;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#000;
-color:#aaa;
-}
-
-</style>
+    #preview { background:var(--warm-gray); }
+    .products-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.8rem;
+    }
+    .card {
+      background:var(--white); border-radius:var(--radius);
+      overflow:hidden; box-shadow:var(--shadow);
+      transition:transform .3s,box-shadow .3s;
+    }
+    .card:hover { transform:translateY(-6px); box-shadow:0 12px 36px rgba(44,26,14,.18); }
+    .card-img-wrap { height:200px; overflow:hidden; position:relative; }
+    .card-img-wrap img { height:100%; object-fit:cover; transition:transform .5s; }
+    .card:hover .card-img-wrap img { transform:scale(1.07); }
+    .card-tag {
+      position:absolute; top:.8rem; left:.8rem;
+      background:var(--red); color:#fff;
+      font-size:.65rem; font-weight:700; letter-spacing:2px;
+      text-transform:uppercase; padding:.3rem .7rem; border-radius:20px;
+    }
+    .card-body { padding:1.2rem 1.4rem 1.5rem; }
+    .card-body h3 {
+      font-family:'Playfair Display',serif; font-size:1.2rem;
+      font-weight:700; margin-bottom:.4rem; color:var(--dark);
+    }
+    .card-body p { font-size:.83rem; color:var(--mid-gray); line-height:1.6; }
+    .card-arrow {
+      display:inline-flex; align-items:center; gap:.3rem;
+      color:var(--red); font-size:.8rem; font-weight:700;
+      margin-top:.8rem; letter-spacing:.5px;
+    }
+    @media(max-width:640px){ .highlights{ grid-template-columns:1fr 1fr; } }
+  </style>
 </head>
-
 <body>
 
-<nav>
-
-<a href="#inicio">Inicio</a>
-<a href="#empresa">Empresa</a>
-<a href="#productos">Productos</a>
-<a href="#catalogo">Catálogo</a>
-<a href="#video">Video</a>
-<a href="#contacto">Contacto</a>
-
-</nav>
-
-<header id="inicio">
-
-<h1>Prime Essence</h1>
-<p>Perfumes de diseñador y fragancias exclusivas</p>
-
-</header>
-
-<section id="empresa">
-
-<h2>Sobre Prime Essence</h2>
-
-<p>
-Prime Essence es una marca dedicada a la venta de perfumes de diseñador y fragancias
-árabes exclusivas. Nos enfocamos en ofrecer aromas elegantes, duraderos y de alta
-calidad para personas que buscan destacar con su esencia.
-</p>
-
-<p>
-Nuestro catálogo incluye perfumes masculinos, femeninos y unisex de marcas
-reconocidas dentro de la perfumería internacional.
-</p>
-
+<section id="inicio">
+  <div class="hero-content">
+    <span class="hero-badge">📍 Valle de Juárez, Jalisco</span>
+    <h1>Tu tienda de<br>confianza desde<br><em>siempre.</em></h1>
+    <p>En Productos Lácteo Contreras Chávez encontrarás todo lo que tu familia necesita — refrescos, abarrotes, vinos finos y quesos seleccionados — con el trato cálido y cercano que nos caracteriza en Valle de Juárez.</p>
+    <a href="productos.html" class="hero-cta">Ver productos &nbsp;→</a>
+  </div>
 </section>
 
-<section id="productos">
-
-<h2>Nuestros Productos</h2>
-
-<div class="productos">
-
-<div class="card">
-<img src="arabe.jpg.jpeg">
-<h3>Perfumes Árabes</h3>
+<div  style="display: flex; justify-content: center; align-items: center; min-height: 200px;">
+  <img src="logo.png" alt="Descripción de la imagen" style="width: 400px; height: auto;">
 </div>
 
-<div class="card">
-<img src="masculinas.jpg.jpeg">
-<h3>Fragancias Masculinas</h3>
+<div class="highlights">
+  <div class="hl-item"><div class="hl-icon">🛒</div><div class="hl-num">+500</div><div class="hl-text">Productos</div></div>
+  <div class="hl-item"><div class="hl-icon">⭐</div><div class="hl-num">20+</div><div class="hl-text">Años de tradición</div></div>
+  <div class="hl-item"><div class="hl-icon">🤝</div><div class="hl-num">100%</div><div class="hl-text">Trato familiar</div></div>
+  <div class="hl-item"><div class="hl-icon">🕗</div><div class="hl-num">7/7</div><div class="hl-text">Todos los días</div></div>
 </div>
 
-<div class="card">
-<img src="feme.jpg.jpeg">
-<h3>Fragancias Femeninas</h3>
-</div>
-
-<div class="card">
-<img src="unisex.jpg.jpeg">
-<h3>Perfumes Unisex</h3>
-</div>
-
-<div class="card">
-<img src="delujo.jpg.jpeg">
-<h3>Perfumes de lujo</h3>
-</div>
-
-<div class="card">
-<img src="impor.jpg.jpeg">
-<h3>Perfumes Importados</h3>
-</div>
-
-</div>
-
-</section>
-
-<section id="catalogo">
-
-<h2>Catálogo de perfumes</h2>
-
-<table>
-
-<tr>
-<th>Perfume</th>
-<th>Marca</th>
-<th>Tipo</th>
-<th>Duración</th>
-<th>Precio</th>
-</tr>
-
-<tr>
-<td>Suavage</td>
-<td>Dior</td>
-<td>Hombre</td>
-<td>10-12 horas</td>
-<td>$4,500</td>
-</tr>
-
-<tr>
-<td>Chanel No. 5</td>
-<td>Chanel</td>
-<td>Mujer</td>
-<td>10 horas</td>
-<td>3,000</td>
-</tr>
-
-<tr>
-<td>Creed Aventus</td>
-<td>Creed</td>
-<td>Hombre</td>
-<td>8 horas</td>
-<td>$900</td>
-</tr>
-
-<tr>
-<td>CK One</td>
-<td>Calvin Klein</td>
-<td>Unisex</td>
-<td>9 horas</td>
-<td>$1,000</td>
-</tr>
-
-</table>
-
-</section>
-
-<section id="video" class="video">
-
-<h2>Conoce nuestras fragancias</h2>
-
-<!-- URL de embed corregida: usar /embed/VIDEO_ID en lugar del link de watch -->
-<div class="video-wrapper">
-  <iframe 
-    src="https://www.youtube.com/embed/Tdal-6WNWVo" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
-</div>
-
-</section>
-
-<section id="contacto" class="contacto">
-
-<h2>Contacto</h2>
-
-<p>Email: primeessence@gmail.com</p>
-<p>Instagram: @prime_essence</p>
-<p>Teléfono: +52 353 130 0909</p>
-<p>Anai Barajas Medina</p>
-
-</section>
-
-<footer>
-
-<p>© 2026 Prime Essence</p>
-
-</footer>
-
+<script src="nav.js"></script>
 </body>
 </html>
